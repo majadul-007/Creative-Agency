@@ -12,7 +12,7 @@ const ObjectId = require('mongodb').ObjectId;
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.eigw8.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 const app = express()
 
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cors());
 //app.use(express.static('doctors'));
 app.use(fileUpload());
