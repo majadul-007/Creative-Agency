@@ -1,7 +1,7 @@
 const express = require('express')
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 const cors = require('cors')
-const fs = require('fs-extra');
+//const fs = require('fs-extra');
 const fileUpload = require('express-fileupload');
 const MongoClient = require('mongodb').MongoClient;
 require('dotenv').config()
@@ -36,10 +36,10 @@ app.get('/', (req, res) => {
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
-  const productsCollection = client.db(`${process.env.DB_NAME}`).collection(`AgencyServices`);
-  const OrderCollection = client.db(`${process.env.DB_NAME}`).collection(`AllOrder`);
-  const reviewCollection = client.db(`${process.env.DB_NAME}`).collection(`Review`);
-  const adminCollection = client.db(`${process.env.DB_NAME}`).collection(`Admin`);
+  const productsCollection = client.db(" creative").collection(`AgencyServices`);
+  const OrderCollection = client.db(" creative").collection("AllOrder");
+  const reviewCollection = client.db(" creative").collection("Review");
+  const adminCollection = client.db("creative").collection("Admin");
 
 
   app.post('/addService', (req, res) => {
